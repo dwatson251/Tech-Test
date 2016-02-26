@@ -45,4 +45,4 @@ The markup to be used for the solution is within [form.html](form.html).
 * Instructions on how to run your solution
 * A description of development choices made and why
 * How long the solution took to implement
-* Revision history from the VCS. If using Subversion, use [http://svnbook.red-bean.com/en/1.7/svn.ref.svnadmin.c.dump.html](`svnadmin dump`). If using Git, create a [https://git-scm.com/docs/git-bundle](`git bundle`).
+* Revision history from the VCS. If using Subversion, use [`svnadmin dump`](http://svnbook.red-bean.com/en/1.7/svn.ref.svnadmin.c.dump.html). If using Git, create a [`git bundle`](https://git-scm.com/docs/git-bundle).
