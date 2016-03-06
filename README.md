@@ -1,3 +1,11 @@
+# Daniel Watsons Implementation
+
+This is my solution; a scalable, custom MVC.
+
+Using ideas from MVC's like Laravel and Zend, I created a custom MVC with autoloading and custom controller and model support.
+
+I feel that this is one of the more effective ways to complete this task.
+
 # 9xb Technical Test
 
 ## Introduction
