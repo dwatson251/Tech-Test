@@ -12,7 +12,7 @@ class Controller
 		{
 
 			require_once $modelDir;
-			return new $model();
+			return new $model($model);
 	
 		}
 
@@ -29,6 +29,37 @@ class Controller
 			require_once $viewDir;
 
 		}
+
+	}
+
+	protected function validate($data, $values)
+	{
+
+		$isValid = true;
+
+		/** Loop through all the fields needed to validate */
+		foreach($values as $field => $validation) {
+
+			$validates = explode("|", $validation);
+
+			foreach($validates as $validate) {
+
+				switch($validate) {
+
+					case "required": 
+
+						if(empty($data[$field]) || strlen(trim($data[$field])) === 0) {
+
+							$isValid = false;
+						}
+					break;
+				}
+
+			}
+
+		}
+
+		return $isValid;
 
 	}
 
