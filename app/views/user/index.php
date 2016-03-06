@@ -26,10 +26,10 @@
        	<?php endforeach; ?>
 
         <tr>
-            <td><input type="text" name="people[][firstname]" placeholder="Add new..." /></td>
-            <td><input type="text" name="people[][lastname]" placeholder="Add new..." /></td>
-            <td><input type="text" name="people[][email]" placeholder="Add new..." /></td>
-            <td><input type="text" name="people[][job_role]" placeholder="Add new..." /></td>
+            <td><input type="text" name="people[0][firstname]" placeholder="Add new..." /></td>
+            <td><input type="text" name="people[0][lastname]" placeholder="Add new..." /></td>
+            <td><input type="text" name="people[0][email]" placeholder="Add new..." /></td>
+            <td><input type="text" name="people[0][job_role]" placeholder="Add new..." /></td>
         </tr>
 
     </table>

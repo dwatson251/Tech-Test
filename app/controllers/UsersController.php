@@ -10,23 +10,28 @@ class UsersController extends Controller
 		if(isset($_POST) && !empty($_POST)) {
 
 			$people = $_POST["people"];
-			
-			var_dump($people);
 
 			foreach($people as $key => $person) {
 
 				$id = $key;
 
-				if(isset($person["delete"]) && $person["delete"] === "1") {
+				if($id === 0) {
 
-					var_dump($key);
-					$this->delete($id);
+					$this->create($person);
 
 				} else {
 
-					$this->update($id, $person);
+					if(isset($person["delete"]) && $person["delete"] === "1") {
 
+						$this->delete($id);
+
+					} else {
+
+						$this->update($id, $person);
+
+					}
 				}
+
 			}
 		}
 
@@ -47,6 +52,29 @@ class UsersController extends Controller
 		$user->find($id);
 
 		return $this->view('user/show', $user);
+
+	}
+
+	public function create($data)
+	{
+
+		if($this->validate($data, [
+			"firstname" => "required",
+			"lastname" => "required",
+			"email" => "required",
+			"job_role" => "required",
+		])) {
+
+			$user = $this->model('User');
+
+			foreach($data as $key => $value) {
+
+				$user->{$key} = $value;
+			}
+
+			$user->save();
+			
+		}
 
 	}
 

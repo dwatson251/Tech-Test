@@ -60,15 +60,22 @@ class Model {
 	public function delete($id = null)
 	{	
 
-		echo "Deleting $id";
-
 		if($id !== null) {
 
 			$sth = $this->db->prepare("DELETE FROM {$this->table} WHERE id = {$id}");
 			$sth->execute();
-
-			// die($id);
 		}
+
+		return;
+
+	}
+
+	public function create($fields, $values)
+	{	
+
+		// If the resultSet is empty, create the row:
+		$sth = $this->db->prepare("INSERT INTO {$this->table} ({$fields}) VALUES ({$values})");
+		$sth->execute();
 
 		return;
 
@@ -95,7 +102,9 @@ class Model {
 
 		foreach($updateData as $key => $value) {
 
-			$sqlSet .= "{$key}='{$value}'";
+			$updateData[$key] = "'".$value."'";
+
+			$sqlSet .= "{$key}={$value}";
 
 			/** http://stackoverflow.com/questions/1070244/how-to-determine-the-first-and-last-iteration-in-a-foreach-loop */
 			/** Check if last element in array */
@@ -129,11 +138,11 @@ class Model {
 
 			} else {
 
-				// If the resultSet is empty, create the row:
-				$sth = $this->db->prepare("INSERT INTO {$this->table} (({$fields})) VALUES ({$values})");
-				$sth->execute();
-
+				$this->create($fields, $values);
 			}
+		} else {
+
+			$this->create($fields, $values);
 		}
 
 	}

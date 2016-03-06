@@ -10,9 +10,10 @@ class User extends Model
 	 * defining a list of fillable fields.
 	 */
 	protected $_fillable = [
-		"forename",
-		"surname",
-		"role"
+		"firstname",
+		"lastname",
+		"email",
+		"job_role"
 	];
 	
 }
