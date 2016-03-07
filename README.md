@@ -1,10 +1,20 @@
-# Daniel Watsons Implementation
+## Daniel Watsons Implementation
 
 This is my solution; a scalable, custom MVC.
 
-Using ideas from MVC's like Laravel and Zend, I created a custom MVC with autoloading and custom controller and model support.
+Using ideas from MVC's like Laravel and Zend, I created a custom MVC with autoloading and custom controller and model support as well as very basic validation, which can be expanded very easily.
 
-I feel that this is one of the more effective ways to complete this task.
+I feel that this was the more effective ways to complete this task, as by developing a small MVC framework I am able to completely seperate the concerns of the application, as well as making it scalable.
+
+## Instructions for use
+I didn't go in to too much detail with deployments, so you'll need to set up the environment manually. Luckily, you'll just need to edit the DB information within [config.php](app/config.php) and create a new table called "user" (Which matches the Model name) with the following rows:
+
+- id (int | Primary Key | Auto Increment)
+- firstname (VARCHAR (255))
+- lastname (VARCHAR (255))
+- job_role (VARCHAR (255))
+
+Then navigate, within the application to <domain.app>/public/users
 
 # 9xb Technical Test
 
