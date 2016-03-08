@@ -16,6 +16,9 @@ I didn't go in to too much detail with deployments, so you'll need to set up the
 
 Then navigate, within the application to <domain.app>/public/users
 
+## Note on time constraints
+I'd like to add that do my ambitious solution to this task, the largest problem I faced was time. As a result, there are many areas I would have liked to improve, such as routing and DB operations, but haven't been able to in such a short space of time (Roughly 2 days work). An in some cases have simply wanted to get it to work. I hope this is as acceptable as it would be in in a working environment, and that given all the time in the world, the quality of the code would be much better.
+
 # 9xb Technical Test
 
 ## Introduction
